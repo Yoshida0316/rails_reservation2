@@ -11,13 +11,10 @@ class Room < ApplicationRecord
   
   
 def self.ransackable_attributes(auth_object = nil)
-    ["room_address"]
+    ["room_address","room_name","room_detail","created_at","image","id"]
 end
-  #def self.ransackable_attributes(auth_object = nil)
-    #%w[room_name room_address room_detail room_price]
-  #end
-  
-  #def self.ransackable_associations(auth_object = nil)
-        #[]
-  #end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["image_attachment", "image_blob", "resevations", "user"]
+  end
 end

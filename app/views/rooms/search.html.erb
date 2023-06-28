@@ -26,7 +26,7 @@
   <tbody>
     <% @results.each do |room| %>
       <tr>
-        <td><%= room.room_name %></td>
+        <td><%= link_to room.room_name,room_path(room) %></td>
         <td><%= room.room_price %></td>
         <td><%= room.room_address %></td>
         <td><%= room.room_detail %></td>

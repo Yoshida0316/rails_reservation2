@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   def search
     @results = @q.result
   end
+  
 
   private
 
