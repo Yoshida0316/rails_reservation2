@@ -1,0 +1,52 @@
+<%= render "shared/partial" %>
+<h3>詳細画面</h3>
+ 
+ <table>
+   <tr>
+     <th>施設名</th>
+     <td><%= @room.room_name %></td>
+   </tr>
+   <tr>
+     <th>住所</th>
+     <td><%= @room.room_address %></td>
+   </tr>
+   <tr>
+     <th>金額</th>
+     <td><%= @room.room_price %></td>
+   </tr>
+   <tr>
+     <th>施設紹介</th>
+     <td><%= @room.room_detail %></td>
+   </tr>
+    <tr>
+     <th>画像</th>
+    <td><%= image_tag @room.image, class: 'room-image' if @room.image.attached? %></td>
+ </table>
+ 
+ <h3> 予約登録</h3>
+<%= form_with model: @reservation ,url: confirm_reservations_path do |r| %>
+      <%= r.hidden_field :room_id, :value => @room.id %>
+      <%= r.hidden_field :user_id, :value => current_user&.id %>
+      <%= r.hidden_field :room_price, :value => @room.room_price %>
+  <div class="field">
+    <%= r.label :checkin_day, "チェックイン"%>
+    <%= r.date_field :checkin_day %>
+  </div>
+  <div class="field">
+    <%= r.label :checkout_day, "チェックアウト"%>
+    <%= r.date_field :checkout_day %>
+  </div>
+   <div class="field">
+    <%= r.label :num_people, "人数"%>
+    <%= r.number_field :num_people %>
+  </div>
+  <li><%= r.submit "予約する" %></li>
+ <% end %>
+<%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+ <div>
+   <ul>
+     <li><%= link_to "ユーザー情報一覧に戻る", :rooms %></li>
+   </ul>
+ </div>
+
+  

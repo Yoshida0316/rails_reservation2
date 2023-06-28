@@ -1,0 +1,35 @@
+<%= render "shared/partial" %>
+<p id="notice"><%= notice %></p>
+<h3>施設登録の編集</h3>
+
+<%= form_with model: @room do |f| %>
+  <div class="field">
+    <%= f.label :room_name, "施設名称"%>
+    <%= f.text_field :room_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_price, "金額"%>
+    <%= f.number_field :room_price %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :room_address, "住所"%>
+    <%= f.text_field :room_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_detail, "施設詳細情報"%>
+    <%= f.text_field :room_detail %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <ul>
+    <li><%= f.submit "登録完了する" %></li>
+    <li><%= link_to "ユーザー情報一覧に戻る", :rooms %></li>
+  </ul>
+<% end %>

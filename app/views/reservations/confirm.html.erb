@@ -1,0 +1,20 @@
+<h2>予約情報の確認</h2>
+<td>チェックイン</td>
+<td><%= @reservation.checkin_day.strftime("%Y/%m/%d") %> </td>
+<td>チェックアウト</td>
+<td><%= @reservation.checkout_day.strftime("%Y/%m/%d") %>  </td>
+<td>人数</td>     
+<td><%= @reservation.num_people %> </td>
+<td>合計金額</td>
+<td><%= @reservation.total_price %> </td>
+
+<%= form_with model: @reservation do  |f| %>
+<%= f.hidden_field :user_id ,:value => @reservation.user.id %>
+<%= f.hidden_field :room_id,:value => @reservation.room.id %>
+<%= f.hidden_field :checkin_day,:value => @reservation.checkin_day %>
+<%= f.hidden_field :checkout_day,:value => @reservation.checkout_day %>
+<%= f.hidden_field :num_people,:value => @reservation.num_people %>
+<%= f.hidden_field :total_price,:value => @reservation.total_price %>
+        <%= f.submit "予約を確定" %>
+<% end %>
+
