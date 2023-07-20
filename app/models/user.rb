@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :resarvations
   has_one_attached :image
-    
+  
+ validates :name, presence: true
+ 
 def self.ransackable_associations(auth_object = nil)
     ["room"] #アソシエーション先を記述
 end

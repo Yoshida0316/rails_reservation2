@@ -5,7 +5,7 @@ class Room < ApplicationRecord
   has_one_attached :image
   
   validates :room_name, presence: true
-  validates :room_price, presence: true
+  validates :room_price, presence: true,numericality: {only_integer: true, greater_than_or_equal_to: 1}
   validates :room_address, presence: true
   validates :room_detail, presence: true
   

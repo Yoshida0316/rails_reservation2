@@ -5,9 +5,9 @@
 
     <h3>アイコン画像</h3>
     <% if @user.image.attached? %>
-    <%= image_tag @user.image %>
+    <%= image_tag @user.image , size:"50x50" %>
     <% else %>
-    <%= image_tag 'https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png' %>
+    <%= image_tag 'https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png' , size:"50x50" %>
     <% end %>
        <h3>ユーザーネーム</h3>
        <h4><%= @user.name %></h4>

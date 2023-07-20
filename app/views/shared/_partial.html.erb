@@ -11,7 +11,7 @@
             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name %>
         </a>
-  　　<ul class="dropdown-menu">
+  　　<ul class="dropdown-menu dropdown-menu-right">
               <li><%=link_to "施設を新規登録する", :new_room %></li>
               <li><%=link_to "予約済み一覧", :reservations_index %></li>
               <li><%=link_to "登録済み一覧", :rooms_index %></li>

@@ -3,13 +3,13 @@
 <table>
 <thead>
 <tr>
-<td>画像</td>
-<td>施設名</td>
-<td>紹介文</td>
-<td>合計金額</td>
-<td>チェックイン</td>
-<td>チェックアウト</td>
-<td>予約確定日時</td>
+<th>施設画像</th>
+<th>施設名</th>
+<th>紹介文</th>
+<th>合計金額</th>
+<th>チェックイン</th>
+<th>チェックアウト</th>
+<th>予約確定日時</th>
 </tr>
 </thead>
 
@@ -20,7 +20,7 @@
         <td><%= image_tag reservation.room.image ,size:"50x50", class: 'reservation.room-image' if reservation.room.image.attached? %></td>
         <td><%= reservation.room.room_name %></td>
         <td><%= reservation.room.room_detail %></td>
-        <td><%= reservation.total_price %></td>
+        <td><%= reservation.total_price %>円</td>
         <td><%= reservation.checkin_day.strftime("%Y/%m/%d") %></td>
         <td><%= reservation.checkout_day.strftime("%Y/%m/%d") %></td>
         <td><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>       
