@@ -27,7 +27,8 @@
         <% end %>
  </table>
  
- <h3> 予約登録</h3>
+ <h3>予約登録</h3>
+ <p>※予約する場合は、以下に入力をお願いします。</p>
 <%= form_with model: @reservation ,url: confirm_reservations_path do |r| %>
       <%= r.hidden_field :room_id, :value => @room.id %>
       <%= r.hidden_field :user_id, :value => current_user&.id %>
