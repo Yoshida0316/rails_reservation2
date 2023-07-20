@@ -1,5 +1,5 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<%= render "shared/partial" %>
+<p id="notice"><%= notice %></p>
 <table>
 <thead>
 <tr>
@@ -17,7 +17,7 @@
  <% if @reservations.count > 0 %>
  <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= image_tag reservation.room.image, class: 'reservation.room-image' if reservation.room.image.attached? %></td>
+        <td><%= image_tag reservation.room.image ,size:"50x50", class: 'reservation.room-image' if reservation.room.image.attached? %></td>
         <td><%= reservation.room.room_name %></td>
         <td><%= reservation.room.room_detail %></td>
         <td><%= reservation.total_price %></td>

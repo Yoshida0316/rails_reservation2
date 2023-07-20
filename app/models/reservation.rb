@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   
   validates :checkin_day, presence: true
   validates :checkout_day, presence: true
-  validates :num_people, presence: true
+  validates :num_people, presence: true,numericality: {only_integer: true, greater_than: 0}
   validate :date_check
   validate :total_price
 

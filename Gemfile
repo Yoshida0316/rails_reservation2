@@ -64,3 +64,6 @@ gem'kaminari'
 gem'devise-i18n'
 
 gem 'pry-rails'
+
+gem 'bootstrap'
+gem 'jquery-rails'
