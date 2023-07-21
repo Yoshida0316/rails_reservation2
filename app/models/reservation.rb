@@ -9,9 +9,8 @@ class Reservation < ApplicationRecord
   validate :total_price
 
 def date_check
- if checkout_day.present? && checkin_day.present? && checkin_day > checkout_day
-  errors.add(:checkout_day,"は開始日より前の日を設定することはできません。")   
-end
+ errors.add(:checkout_day,"は開始日より前の日を設定することはできません。") unless  
+ self.checkin_day <  self.checkout_day
 end
 
 def days
