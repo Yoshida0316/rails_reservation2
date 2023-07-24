@@ -46,7 +46,6 @@ class ReservationsController < ApplicationController
     @reservation.room_id = @room.id
      if @reservation.invalid?
       render template: "rooms/show"
-      return
     end
   end
   

@@ -9,7 +9,13 @@
   <%= f.search_field :room_address_cont %>
   <%= f.submit '検索' %>
 <% end %>
-  
+<h3>キーワード検索</h3>
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+  <%= f.label :room_name_or_room_detail_cont, 'キーワード' %>
+  <%= f.search_field :room_name_or_room_detail_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+
 <table>
   <thead>
     <tr>

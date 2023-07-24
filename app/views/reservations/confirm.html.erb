@@ -22,8 +22,8 @@
 <%= form_with model: @reservation do  |f| %>
 <%= f.hidden_field :user_id ,:value => @reservation.user.id %>
 <%= f.hidden_field :room_id,:value => @reservation.room.id %>
-<%= f.hidden_field :checkin_day,:value => @reservation.checkin_day %>
-<%= f.hidden_field :checkout_day,:value => @reservation.checkout_day %>
+<%= f.hidden_field :checkin_day,:value => @reservation.checkin_day.strftime("%Y/%m/%d")  %>
+<%= f.hidden_field :checkout_day,:value => @reservation.checkout_day.strftime("%Y/%m/%d")  %>
 <%= f.hidden_field :num_people,:value => @reservation.num_people %>
 <%= f.hidden_field :total_price,:value => @reservation.total_price %>
         <%= f.submit "予約を確定" %>
