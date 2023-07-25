@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chackin_day: 2023-04-05 12:23:12
+  chackout_day: 2023-04-05 12:23:12
+  num_people: 1
+  total_people: 1
+  total_price: 1
+
+two:
+  chackin_day: 2023-04-05 12:23:12
+  chackout_day: 2023-04-05 12:23:12
+  num_people: 1
+  total_people: 1
+  total_price: 1

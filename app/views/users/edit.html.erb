@@ -1,0 +1,25 @@
+<%= render "shared/partial" %>
+<p id="notice"><%= notice %></p>
+<h2>プロフィール編集</h2>
+
+<%= form_with model:@user do |f| %>
+  
+  <div class="field">
+    <%= f.label :name, "ユーザーネーム" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+  <div class="field">
+    <%= f.label :introduction, "自己紹介" %><br />
+    <%= f.text_area :introduction, :size=>"60x10" %>
+  </div>
+    
+  <div class="actions">
+    <%= f.submit "保存" %>
+  </div>
+<% end %>
+<%= link_to "キャンセル", :back %>

@@ -1,0 +1,53 @@
+<%= render "shared/partial" %>
+
+<p id="notice"><%= notice %></p>
+
+<h1> 検索一覧</h1>
+
+<h3>検索画面</h3>
+<%= search_form_for @q , url: search_rooms_path do |f| %>
+  <%= f.search_field :room_address_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+<h3>キーワード検索</h3>
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+  <%= f.label :room_name_or_room_detail_cont, 'キーワード' %>
+  <%= f.search_field :room_name_or_room_detail_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>施設名</th>
+      <th>金額</th>
+      <th>住所</th>
+      <th>施設詳細</th>
+      <th>施設画像</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @results.each do |room| %>
+      <tr>
+        <td><%= link_to room.room_name,room_path(room) %></td>
+        <td><%= room.room_price %></td>
+        <td><%= room.room_address %></td>
+        <td><%= room.room_detail %></td>
+        <td><% if room.image.attached? %>
+        <%= image_tag room.image ,size:"50x50"%>
+         <% else %>
+        <%= image_tag 'https://rails-02-sample.herokuapp.com/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png'  ,size:"50x50"%>
+        <% end %></td>
+        <td><%= link_to "詳細はこちら", room %></td>
+    <% end %></td>
+      </tr>
+    
+ 
+  </tbody>
+</table>
+
+
+<%= link_to 'Top', root_path %>
