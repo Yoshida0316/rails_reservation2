@@ -45,6 +45,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.room_id = @room.id
      if @reservation.invalid?
+     flash.now[:alert] = "予約に失敗しました"
       render template: "rooms/show"
     end
   end

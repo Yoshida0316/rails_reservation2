@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
       flash[:notice] = "新規登録しました"
       redirect_to room_path(@room)
      else
+     flash.now[:alert] = "登録に失敗しました"
        render :new
      end
    end
