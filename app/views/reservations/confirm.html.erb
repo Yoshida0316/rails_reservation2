@@ -27,5 +27,6 @@
 <%= f.hidden_field :num_people,:value => @reservation.num_people %>
 <%= f.hidden_field :total_price,:value => @reservation.total_price %>
         <%= f.submit "予約を確定" %>
+         <%= link_to "戻る",:back %>
 <% end %>
 
