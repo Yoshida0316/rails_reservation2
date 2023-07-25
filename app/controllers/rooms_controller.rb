@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
     @room.user_id = current_user.id
      if @room.save
       flash[:notice] = "新規登録しました"
-      redirect_to room_path(@room)
+      redirect_to :rooms
      else
      flash.now[:alert] = "登録に失敗しました"
        render :new
